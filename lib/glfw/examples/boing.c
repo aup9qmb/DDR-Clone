@@ -64,6 +64,8 @@ void DrawGrid( void );
 #define STEP_LONGITUDE   22.5f                   /* 22.5 makes 8 bands like original Boing */
 #define STEP_LATITUDE    22.5f
 
+# define M_PI          3.141592653589793238462643383279502884L
+
 #define DIST_BALL       (RADIUS * 2.f + RADIUS * 0.1f)
 
 #define VIEW_SCENE_DIST (DIST_BALL * 3.f + 200.f)/* distance from viewer to middle of boing area */
