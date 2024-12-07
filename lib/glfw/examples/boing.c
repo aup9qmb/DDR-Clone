@@ -27,14 +27,15 @@
  * a hidden computer or VCR.
  *****************************************************************************/
 
-#if defined(_MSC_VER)
- // Make MS math.h define M_PI
- #define _USE_MATH_DEFINES
-#endif
+
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+
+
+#define _USE_MATH_DEFINES
+
 
 #define GLAD_GL_IMPLEMENTATION
 #include <glad/gl.h>
