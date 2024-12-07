@@ -21,8 +21,10 @@ BIN = bin
 all: dirs game
 
 libs:
+	cd lib/cglm && cmake . -DCGLM_STATIC=ON && make
 	cd lib/glad && $(CC) -o src/glad.o -Iinclude -c src/glad.c
 	cd lib/glfw && cmake . && make
+	cd lib/noise && make
 
 dirs:
 	mkdir -p ./$(BIN)
