@@ -31,7 +31,7 @@ The game binary, once built with `$ make`, can be found in `./bin/`.
 
 Run with `$ ./bin/game` or `$ make run` out of the root directory of the repository.[^1]
 
-[^1]: Fear of failure may be a poor reason not to try, but try and fail
+[^1]: Fear of failure may be a poor reason not to try, but try and fail both I did.
 
 #### References
 
