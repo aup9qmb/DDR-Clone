@@ -1,10 +1,13 @@
 # DDR-Clone
 
-#### Video
+```
+I shall be telling this with a sigh
+Somewhere ages and ages hence:
+Two roads diverged in a wood, and I—
+I took the one not traveled by,
+```
 
-
-
-#### Building
+## Building
 
 ### External Dependencies
 
@@ -26,7 +29,9 @@ CS50 codespace has all of these included, and others are statically linked.
 
 The game binary, once built with `$ make`, can be found in `./bin/`.
 
-Run with `$ ./bin/game` or `$ make run` out of the root directory of the repository.
+Run with `$ ./bin/game` or `$ make run` out of the root directory of the repository.[^1]
+
+[^1]: Fear of failure may be a poor reason not to try, but try and fail
 
 #### References
 
