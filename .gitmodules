@@ -7,3 +7,6 @@
 [submodule "lib/openal-soft"]
 	path = lib/openal
 	url = https://github.com/kcat/openal-soft.git
+[submodule "lib/astera"]
+	path = lib/astera
+	url = git@github.com:tek256/astera.git
