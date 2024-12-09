@@ -1,9 +1,9 @@
 [submodule "lib/cglm"]
 	path = lib/cglm
-	url = https://github.com/recp/cglm
+	url = https://github.com/recp/cglm.git
 [submodule "lib/glfw"]
 	path = lib/glfw
-	url = https://github.com/glfw/glfw
+	url = https://github.com/glfw/glfw.git
 [submodule "lib/openal-soft"]
 	path = lib/openal
 	url = https://github.com/kcat/openal-soft.git

@@ -20,23 +20,11 @@ enum Textures {
 #define CAMERA_STACK_MAX 256
 
 enum RenderPass {
-    PASS_2D,
-    PASS_3D
+    PASS_2D
 };
 
 struct Renderer {
-    enum CameraType camera_type;
-    struct {
-        enum CameraType array[CAMERA_STACK_MAX];
-        size_t size;
-    } camera_stack;
 
-    struct PerspectiveCamera perspective_camera;
-    struct OrthoCamera ortho_camera;
-
-    struct Shader shaders[SHADERS_LAST + 1];
-    enum ShaderType current_shader;
-    struct Shader shader;
 
     struct Texture textures[TEXTURE_LAST + 1];
 

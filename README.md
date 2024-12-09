@@ -2,11 +2,24 @@
 
 #### Video
 
-lorem ipsum
+
 
 #### Building
 
-This assumes **cmake** and **clang** are pre-installed to build with `$ make`. Additionally, GLFW requires **libwayland-dev**, **libxkbcommon-dev**, and **xorg-dev**; see [here](https://www.glfw.org/docs/latest/compile_guide.html#compile_deps).
+### External Dependencies
+
+CS50 codespace has all of these included, and others are statically linked.
+
+- cmake
+- clang
+- libwayland-dev
+- libxkbcommon-dev
+- xorg-dev
+- mesa-common-dev
+- libx11-dev
+- libxrandr-dev
+- libxi-dev xorg-dev
+
 
 `$ git clone --recurse-submodules https://github.com/aup9qmb/DDR-Clone.git`\
 `$ cd DDR-Clone && make`
@@ -18,5 +31,11 @@ Run with `$ ./bin/game` or `$ make run` out of the root directory of the reposit
 #### References
 
 - [glfw](https://www.glfw.org/)
+- [glad](https://glad.dav1d.de/)
+- [cglm](https://github.com/recp/cglm)
+- [openal-soft](https://github.com/kcat/openal-soft)
+- [astera](https://github.com/tek256/astera)
 - [jdah, minecraft-weekend](https://www.youtube.com/watch?v=4O0_-1NaWnY)
 - [fizzd, How To Make A Rhythm Game (Technical Guide)](https://fizzd.notion.site/How-To-Make-A-Rhythm-Game-Technical-Guide-ed09f5e09752451f97501ebddf68cf8a)
+- [de Vries, learnOpenGL](https://learnopengl.com/)
+- [openAL dev guide](https://www.openal.org/documentation/OpenAL_Programmers_Guide.pdf)

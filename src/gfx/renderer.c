@@ -2,102 +2,43 @@
 #include "../state.h"
 
 void renderer_init(struct Renderer *self) {
+    /* 
+    Draw all opaque objects first.
+    Sort all the transparent objects.
+    Draw all the transparent objects in sorted order.
+    */
+
     *self = (struct Renderer) {0};
-    self->camera_type = CAMERA_PERSPECTIVE;
 
-    self->shaders[SHADER_BASIC_TEXTURE] = shader_create(
-        "res/shaders/basic_texture.vs", "res/shaders/basic_texture.fs",
-        2, (struct VertexAttr[]) {
-            { .index = 0, .name = "position" },
-            { .index = 1, .name = "uv" }
-        });
-
-    self->shaders[SHADER_CHUNK] = shader_create(
-        "res/shaders/chunk.vs", "res/shaders/chunk.fs",
-        3, (struct VertexAttr[]) {
-            { .index = 0, .name = "position" },
-            { .index = 1, .name = "uv" },
-            { .index = 2, .name = "color" }
-        });
-
-    self->shaders[SHADER_SKY] = shader_create(
-        "res/shaders/sky.vs", "res/shaders/sky.fs",
-        2, (struct VertexAttr[]) {
-            { .index = 0, .name = "position" },
-            { .index = 1, .name = "uv" }
-        });
-
-    self->shaders[SHADER_BASIC_COLOR] = shader_create(
-        "res/shaders/basic_color.vs", "res/shaders/basic_color.fs",
-        1, (struct VertexAttr[]) {
-            { .index = 0, .name = "position" }
-        });
-
-
-    self->block_atlas = blockatlas_create(
-        "res/images/blocks.png",
-        (ivec2s) {{ 16, 16 }}
-    );
-
-    self->textures[TEXTURE_CROSSHAIR] = texture_create_from_path("res/images/crosshair.png");
-    self->textures[TEXTURE_CLOUDS] = texture_create_from_path("res/images/clouds.png");
-    self->textures[TEXTURE_STAR] = texture_create_from_path("res/images/star.png");
-    self->textures[TEXTURE_SUN] = texture_create_from_path("res/images/sun.png");
-    self->textures[TEXTURE_MOON] = texture_create_from_path("res/images/moon.png");
-    self->textures[TEXTURE_HOTBAR] = texture_create_from_path("res/images/hotbar.png");
+    self->textures[TEXTURE_BKG] = texture_create_from_path("res/images/neutral_bkg.png");
+    self->textures[TEXTURE_BOTTOM_BAR] = texture_create_from_path("res/images/bottom_bar.png");
+    self->textures[TEXTURE_TOP_BAR] = texture_create_from_path("res/images/top_bar.png");
 
     self->vao = vao_create();
     self->vbo = vbo_create(GL_ARRAY_BUFFER, true);
     self->ibo = vbo_create(GL_ELEMENT_ARRAY_BUFFER, true);
 
-    perspective_camera_init(&self->perspective_camera, radians(75.0f));
-    ortho_camera_init(
-        &self->ortho_camera, GLMS_VEC2_ZERO,
-        (vec2s) {{ state.window->size.x, state.window->size.y }});
 }
 
 void renderer_destroy(struct Renderer *self) {
-    for (size_t i = 0; i <= SHADERS_LAST; i++) {
-        shader_destroy(self->shaders[i]);
-    }
 
-    blockatlas_destroy(&self->block_atlas);
     vao_destroy(self->vao);
     vbo_destroy(self->vbo);
     vbo_destroy(self->ibo);
 }
 
 void renderer_update(struct Renderer *self) {
-    blockatlas_update(&self->block_atlas);
+
+    arrow_update(&self->block_atlas);
 }
 
-void renderer_prepare(struct Renderer *self, enum RenderPass pass) {
-    switch (pass) {
-        case PASS_2D:
-            ortho_camera_init(
-                &self->ortho_camera, GLMS_VEC2_ZERO,
-                (vec2s) {{ state.window->size.x, state.window->size.y }});
-            glClear(GL_DEPTH_BUFFER_BIT);
-            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-            glDisable(GL_DEPTH_TEST);
-            glDisable(GL_CULL_FACE);
-            glEnable(GL_BLEND);
-            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-            break;
-        case PASS_3D:
-            glClearColor(
-                self->clear_color.x, self->clear_color.y,
-                self->clear_color.z, self->clear_color.w);
-            glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-            glPolygonMode(GL_FRONT_AND_BACK, self->flags.wireframe ? GL_LINE : GL_FILL);
-            glEnable(GL_DEPTH_TEST);
-            glDepthFunc(GL_LESS);
-            glEnable(GL_CULL_FACE);
-            glCullFace(GL_BACK);
-            glEnable(GL_BLEND);
-            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-            break;
-    }
+void renderer_prepare(struct Renderer *self) {
+    glClear(GL_DEPTH_BUFFER_BIT);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+    glDisable(GL_DEPTH_TEST);
+    glDisable(GL_CULL_FACE);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 }
 
 void renderer_set_camera(struct Renderer *self, enum CameraType type) {
