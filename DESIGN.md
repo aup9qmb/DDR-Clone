@@ -8,16 +8,11 @@ In an ideal world I would've had more time to work on this, but I vastly underes
 
 
 ### System Architecture
-
+````
 .
 DDR-Clone/
     bin/
     lib/
-        astera/
-        cglm/
-        glad/
-        glfw/
-        openal-soft/
     res/
         audio/
         images/
@@ -25,9 +20,7 @@ DDR-Clone/
         afx/
         gfx/
         util/
-        main.c
-        state.h
-
+````
 
 
 ### Screen Objects and Actions
