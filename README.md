@@ -8,7 +8,7 @@
 
 
 `$ git clone --recurse-submodules -b mirrorverse https://github.com/aup9qmb/DDR-Clone.git`\
-`$ cd DDR-Clone `
+`$ cd DDR-Clone `  
 `$ python lib/pygame/setup.py install`
 
 Run with `$ python main.py` out of the root directory of the repository.
