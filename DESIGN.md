@@ -13,18 +13,17 @@ In an ideal world I would've had more time to work on this, but I vastly underes
 DDR-Clone/
     bin/
     lib/
-        pypy/
-        pysdl2/
+        pygame/
     res/
         audio/
         images/
     src/
         afx/
-        gfx/
+        entities/
         util/
 ````
 
 
 ### Screen Objects and Actions
 
-A discussion of screen objects and actions associated with those objects.
+
