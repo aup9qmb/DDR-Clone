@@ -1,8 +1,3 @@
-[submodule "lib/pysdl2"]
-	path = lib/pysdl2
-	url = git@github.com:py-sdl/py-sdl2.git
-
-
-[submodule "lib/pypy"]
-	path = lib/pypy
-	url = git@github.com:pypy/pypy.git
+[submodule "lib/pygame"]
+	path = lib/pygame
+	url = https://github.com/pygame/pygame.git
