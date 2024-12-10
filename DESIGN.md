@@ -13,6 +13,8 @@ In an ideal world I would've had more time to work on this, but I vastly underes
 DDR-Clone/
     bin/
     lib/
+        pypy/
+        pysdl2/
     res/
         audio/
         images/

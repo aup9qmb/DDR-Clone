@@ -1,12 +1,7 @@
-[submodule "lib/cglm"]
-	path = lib/cglm
-	url = https://github.com/recp/cglm.git
-[submodule "lib/glfw"]
-	path = lib/glfw
-	url = https://github.com/glfw/glfw.git
-[submodule "lib/openal-soft"]
-	path = lib/openal
-	url = https://github.com/kcat/openal-soft.git
-[submodule "lib/astera"]
-	path = lib/astera
-	url = git@github.com:tek256/astera.git
+[submodule "lib/pysdl2"]
+	path = lib/pysdl2
+	url = git@github.com:py-sdl/py-sdl2.git
+[submodule "lib/pypy"]
+	path = lib/pypy
+	url = git@github.com:pypy/pypy.git
+
