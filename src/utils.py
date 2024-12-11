@@ -12,6 +12,8 @@ WHITE = (255, 255, 255)
 SCREEN_WIDTH = 640
 SCREEN_HEIGHT = 480
 
+
+
 delx = 5
 w = 32
 r_center = (int(SCREEN_WIDTH / 6), 70)

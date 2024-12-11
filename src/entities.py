@@ -8,6 +8,7 @@ class arrow(pygame.sprite.Sprite):
 
     def __init__(self, d, xycoords, speed):
         super().__init__()
+        self.d = d
         texture = f'res/images/{d}_arrow_active.png'
         self.image = pygame.image.load(texture)
         # speed needs to be calc'd from bpm
@@ -17,17 +18,10 @@ class arrow(pygame.sprite.Sprite):
 
         WINDOW.blit(self.image, self.pos)
 
-    def move(self, max_y):
+    def move(self):
         self.pos.top -= self.speed
         if self.pos.top < 0:
             self.pos.top = 0
-        if self.pos.top < max_y:
-            self.pos.top = max_y
-
-    def get_area(self):
-        area = (int(self.rect.left), int(self.rect.top),
-                int(self.rect.width), int(self.rect.height))
-        return area
 
     def retexture(self, texture):
         self.image = pygame.image.load(texture)
