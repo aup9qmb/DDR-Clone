@@ -1,3 +1,7 @@
 [submodule "lib/pygame"]
 	path = lib/pygame
 	url = https://github.com/pygame/pygame.git
+[submodule "lib/essentia"]
+	path = lib/essentia
+	url = https://github.com/MTG/essentia.git
+	branch = python311_wheels
