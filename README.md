@@ -2,8 +2,7 @@
 
 #### Video
 
-https://github.com/aup9qmb/DDR-Clone/blob/cb2c7c9320e2e6e279fa76afd521195f74443d90/res/videos/VIDEO.mp4
-
+https://github.com/aup9qmb/DDR-Clone/blob/mirrorverse/res/videos/VIDEO.mp4
 #### Building
 
 `$ git clone --recurse-submodules -b mirrorverse https://github.com/aup9qmb/DDR-Clone.git\`
