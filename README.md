@@ -2,7 +2,7 @@
 
 #### Video
 
-
+[![Watch the video](res/videos/VIDEO.mkv)]
 
 #### Building
 
