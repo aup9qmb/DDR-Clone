@@ -2,7 +2,7 @@
 
 #### Video
 
-[![Watch the video](res/videos/VIDEO.mp4)]
+https://github.com/aup9qmb/DDR-Clone/blob/cb2c7c9320e2e6e279fa76afd521195f74443d90/res/videos/VIDEO.mp4
 
 #### Building
 
